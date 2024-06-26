@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+    <script>
+    function getAutomaticTheme(){return window.matchMedia("(prefers-color-scheme: dark)").matches?"latte":"frappe"}function setMetaThemeColor(){const e=document.querySelector("meta[name='theme-color']");e&&e.setAttribute("content",getComputedStyle(document.documentElement).getPropertyValue("--base"))}function setTheme(e,t){const{permanent:m,update:o}={permanent:!0,update:!0,...t};m&&localStorage.setItem("theme",e),"auto"===e&&(e=getAutomaticTheme()),document.documentElement.setAttribute("theme",e),document.documentElement.style.setProperty("color-scheme","latte"===e?"light":"dark"),setMetaThemeColor(),o&&loadmode()}const params=new URLSearchParams(window.location.search),themes=["latte","frappe"];let theme,stored=localStorage.getItem("theme"),override=params.get("theme");theme=override||stored,theme&&themes.includes(theme)||(theme=themes.includes(stored)?stored:"auto"),setTheme(theme,{permanent:theme!==override,update:!1});
+   </script>
+  </head>
+  <body>
+  <h1 class="dlm">Dark ligth Mode</h1>
+  <h2 class="dlm">Toggle html css javascript localstorage radio selection</h2>
+ <div class="sl">
+  <select aria-label="Theme selector" id="theme-selector" class="text-center text-text bg-base border-2 border-surface0 rounded-md focus:outline-none mt-1">
+    <option value="latte">light</option>
+    <option value="frappe">Dark</option>
+    </select>
+    </div>
+     <script src="toggle.js"></script> 
+</body>
+</html>
