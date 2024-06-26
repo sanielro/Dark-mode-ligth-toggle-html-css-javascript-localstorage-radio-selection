@@ -1,0 +1,25 @@
+:root[theme="latte"] {
+  --primary-text-color: #000000;
+  --background-color: #ffffff;
+}
+
+:root[theme="latte"] span {
+  color: var(--shiki-latte);
+}
+
+:root[theme="frappe"] {
+  --primary-text-color: #f3f3f3;
+  --background-color: #161616;
+}
+
+:root[theme="frappe"] span {
+  color: var(--shiki-frappe);
+}
+
+:root:not([theme]) .code-block .toolbar {
+  display: none;
+}
+
+.dlm, .sl{
+  text-align:center;
+}
